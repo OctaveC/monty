@@ -26,19 +26,20 @@ int main(int argc, char *argv[])
 int monty_handler(void)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
-	FILE *opening;
 	int check = 1;
 	stack_t *stack = NULL;
 	size_t len = 0;
 
+	data.stack = &stack;
 	data.line_num = 0;
-	opening = fopen(data.filename, "r");
-	if (opening == NULL)
+	data.opening = fopen(data.filename, "r");
+	if (data.opening == NULL)
 		error_handler(2);
 
-	while ((check = getline(&data.line, &len, opening)) > 0)
+	while ((check = getline(&data.line, &len, data.opening)) > 0)
 	{
 		data.line_num++;
+		free(data.args);
 		cut();
 		data.cmd = data.args[0];
 		if (data.cmd != NULL)
@@ -48,6 +49,7 @@ int monty_handler(void)
 				f(&stack, 1);
 		}
 	}
+	free_data();
 	return (0);
 }
 

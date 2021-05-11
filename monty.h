@@ -56,6 +56,8 @@ typedef struct data_s
 	int line_num;
 	char *cmd;
 	char **args;
+	FILE *opening;
+	stack_t **stack;
 } data_t;
 
 extern data_t data;
@@ -83,6 +85,10 @@ void monty_pall(stack_t **stack, unsigned int line_number __attribute__((unused)
 /* various helper functions */
 int is_digit_str(char *str);
 void add_node_LIFO(stack_t **stack, stack_t *new);
+
+/* memory management */
+void free_data(void);
+void free_l_list(stack_t **stack);
 
 /* error handling */
 void error_handler(int num);

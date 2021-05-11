@@ -13,10 +13,17 @@ void monty_push(stack_t **stack,
 	stack_t *new = malloc(sizeof(stack_t));
 
 	if (new == NULL)
+	{
+		/*	free_l_list(**stack); */
 		error_handler(3);
+	}
 
 	if (is_digit_str(data.args[1]) > 0)
+	{
+		/*	free_l_list(*stack); */
+		free(new);
 		error_handler(5);
+	}
 
 	new->n = atoi(data.args[1]);
 

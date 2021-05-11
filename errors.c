@@ -25,6 +25,7 @@ void opening_fail(void)
 void instruction_fail(void)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", data.line_num, data.args[0]);
+	free_data();
 	exit(EXIT_FAILURE);
 }
 
@@ -34,6 +35,7 @@ void instruction_fail(void)
 void malloc_fail(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
+	free_data();
 	exit(EXIT_FAILURE);
 }
 
@@ -43,5 +45,6 @@ void malloc_fail(void)
 void push_fail(void)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", data.line_num);
+	free_data();
 	exit(EXIT_FAILURE);
 }
