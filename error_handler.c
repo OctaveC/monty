@@ -17,6 +17,11 @@ void error_handler(int num)
 		{6, pint_fail},
 		{7, pop_fail},
 		{8, swap_fail},
+		{9, add_fail},
+		{10, sub_fail},
+		{11, div_fail},
+		{12, mul_fail},
+		{13, mod_fail},
 		{0, NULL}
 	};
 	int ite = 0;

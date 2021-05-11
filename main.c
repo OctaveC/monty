@@ -62,9 +62,9 @@ int cut(void)
 {
 	char *saveptr, *token;
 	char *str = data.line;
-	int ite = 0;
+	int ite = 0, buffer_size = 15;
 
-	data.args = malloc(sizeof(char) * 30);
+	data.args = malloc(sizeof(char *) * buffer_size);
 	if (data.args == NULL)
 		error_handler(4);
 
@@ -75,7 +75,14 @@ int cut(void)
 		{
 			break;
 		}
-		/* add a realloc here if there's memory issues */
+		if (ite >= buffer_size)
+		{
+			data.args = _realloc(data.args, sizeof(char *) * buffer_size,
+					     sizeof(char *) * (buffer_size * 2));
+			if (data.args == NULL)
+				error_handler(3);
+			buffer_size *= 2;
+		}
 		data.args[ite] = token;
 	}
 	data.args[ite] = NULL;
@@ -95,6 +102,12 @@ void (*check_monty(void))(stack_t **stack, unsigned int line_number)
 		{"pint", monty_pint},
 		{"pop", monty_pop},
 		{"swap", monty_swap},
+		{"add", monty_add},
+		{"nop", monty_nop},
+		{"sub", monty_sub},
+		{"div", monty_div},
+		{"mul", monty_mul},
+		{"mod", monty_mod},
 		{NULL, NULL}
 	};
 	int ite = 0;

@@ -32,3 +32,25 @@ void swap_fail(void)
 	free_data();
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * add_fail - error for the case where there's
+ * not enough elements when you try to add.
+ */
+void add_fail(void)
+{
+	fprintf(stderr, "L%d: can't add, stack too short\n", data.line_num);
+	free_data();
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * sub_fail - error for the case where there's
+ * not enough elements when you try to sub.
+ */
+void sub_fail(void)
+{
+	fprintf(stderr, "L%d: can't sub, stack too short\n", data.line_num);
+	free_data();
+	exit(EXIT_FAILURE);
+}

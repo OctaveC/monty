@@ -84,15 +84,26 @@ void monty_pall(stack_t **stack, unsigned int line_number __attribute__((unused)
 void monty_pint(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_pop(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_add(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_nop(stack_t **stack __attribute__((unused)),
+unsigned int line_number __attribute__((unused)));
+void monty_sub(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_div(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_mul(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_mod(stack_t **stack, unsigned int line_number __attribute__((unused)));
 
 /* various helper functions */
 int is_digit_str(char *str);
 void add_node_LIFO(stack_t **stack, stack_t *new);
 size_t dlistint_len(stack_t *stack);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 
 /* memory management */
 void free_data(void);
 void free_l_list(stack_t **stack);
+char *_calloc(unsigned int nmemb, unsigned int size);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 /* error handling */
 void error_handler(int num);
@@ -104,4 +115,10 @@ void push_fail(void);
 void pint_fail(void);
 void pop_fail(void);
 void swap_fail(void);
+void add_fail(void);
+void sub_fail(void);
+void div_fail(void);
+void mul_fail(void);
+void mod_fail(void);
+
 #endif

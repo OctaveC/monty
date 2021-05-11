@@ -95,13 +95,12 @@ void monty_swap(stack_t **stack,
 		unsigned int line_number __attribute__((unused)))
 {
 	stack_t *first, *second;
-	stack_t *head = *stack;
 
 	if (dlistint_len(*stack) < 2)
 	error_handler(8);
 
-	first = head;
-	second = head->next;
+	first = (*stack);
+	second = (*stack)->next;
 
 	/* assign the top element's new next and prev */
 	first->next = second->next;
