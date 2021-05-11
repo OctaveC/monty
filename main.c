@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 		error_handler(1);
 
+	data.format = LIFO;
 	data.filename = argv[1];
 	monty_handler();
 	return (0);
@@ -42,7 +43,7 @@ int monty_handler(void)
 		free(data.args);
 		cut();
 		data.cmd = data.args[0];
-		if (data.cmd != NULL)
+		if (data.cmd != NULL && data.cmd[0] != '#')
 		{
 			f = check_monty();
 			if (f != NULL)
@@ -108,6 +109,13 @@ void (*check_monty(void))(stack_t **stack, unsigned int line_number)
 		{"div", monty_div},
 		{"mul", monty_mul},
 		{"mod", monty_mod},
+		{"pchar", monty_pchar},
+		{"pstr", monty_pstr},
+		{"pstr", monty_pstr},
+		{"rotl", monty_rotl},
+		{"rotr", monty_rotr},
+		{"stack", monty_stack},
+		{"queue", monty_queue},
 		{NULL, NULL}
 	};
 	int ite = 0;

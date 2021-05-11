@@ -22,6 +22,9 @@ void error_handler(int num)
 		{11, div_fail},
 		{12, mul_fail},
 		{13, mod_fail},
+		{14, div_by_zero_fail},
+		{15, pchar_range_fail},
+		{16, pchar_empty_fail},
 		{0, NULL}
 	};
 	int ite = 0;

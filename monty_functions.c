@@ -23,7 +23,10 @@ void monty_push(stack_t **stack,
 
 	new->n = atoi(data.args[1]);
 
-	add_node_LIFO(stack, new);
+	if (data.format == LIFO)
+		add_node_LIFO(stack, new);
+	else if (data.format == FIFO)
+		add_node_FIFO(stack, new);
 }
 
 /**

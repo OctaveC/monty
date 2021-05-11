@@ -17,6 +17,31 @@ void add_node_LIFO(stack_t **stack, stack_t *new)
 }
 
 /**
+ * add_node_FIFO - adds node first in first out
+ * @stack: the stack we're adding to
+ * @new: the new node we're adding to the stack
+ *
+ * Return: Nothing
+ */
+void add_node_FIFO(stack_t **stack, stack_t *new)
+{
+	stack_t *head = *stack;
+
+	new->next = NULL;
+	new->prev = NULL;
+
+	if (head == NULL)
+		*stack = new;
+	else
+	{
+		while (head->next != NULL)
+			head = head->next;
+		head->next = new;
+		new->prev = head;
+	}
+}
+
+/**
  * dlistint_len - Returns the number of elements in a doubly linked list
  * @stack: The list we're going to print
  *

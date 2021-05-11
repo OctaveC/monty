@@ -11,6 +11,9 @@
 #include <errno.h>
 #include <ctype.h>
 
+#define LIFO 0
+#define FIFO 1
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -58,6 +61,7 @@ typedef struct data_s
 	char **args;
 	FILE *opening;
 	stack_t **stack;
+	int format;
 } data_t;
 
 extern data_t data;
@@ -86,15 +90,24 @@ void monty_pop(stack_t **stack, unsigned int line_number __attribute__((unused))
 void monty_swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_add(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_nop(stack_t **stack __attribute__((unused)),
-unsigned int line_number __attribute__((unused)));
+	       unsigned int line_number __attribute__((unused)));
 void monty_sub(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_div(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_mul(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_mod(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_pchar(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_pstr(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_rotl(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_rotr(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_stack(stack_t **stack __attribute__((unused)),
+		 unsigned int line_number __attribute__((unused)));
+void monty_queue(stack_t **stack __attribute__((unused)),
+		 unsigned int line_number __attribute__((unused)));
 
 /* various helper functions */
 int is_digit_str(char *str);
 void add_node_LIFO(stack_t **stack, stack_t *new);
+void add_node_FIFO(stack_t **stack, stack_t *new);
 size_t dlistint_len(stack_t *stack);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 
@@ -120,5 +133,8 @@ void sub_fail(void);
 void div_fail(void);
 void mul_fail(void);
 void mod_fail(void);
+void div_by_zero_fail(void);
+void pchar_range_fail(void);
+void pchar_empty_fail(void);
 
 #endif

@@ -79,6 +79,8 @@ void monty_div(stack_t **stack,
 		error_handler(11);
 
 	first = (*stack);
+	if (first->n == 0)
+		error_handler(14);
 	second = (*stack)->next;
 
 	div = second->n / first->n;

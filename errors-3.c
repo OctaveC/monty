@@ -32,3 +32,14 @@ void mod_fail(void)
 	free_data();
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * div_by_zero_fail - error for the case where there's
+ * a division by zero.
+ */
+void div_by_zero_fail(void)
+{
+	fprintf(stderr, "L%d: division by zero\n", data.line_num);
+	free_data();
+	exit(EXIT_FAILURE);
+}
