@@ -81,10 +81,14 @@ void (*check_monty(void))(stack_t **stack, unsigned int line_number);
 /* the monty functions that get called when the correct opcode is selected */
 void monty_push(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void monty_pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_pint(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_pop(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void monty_swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
 
 /* various helper functions */
 int is_digit_str(char *str);
 void add_node_LIFO(stack_t **stack, stack_t *new);
+size_t dlistint_len(stack_t *stack);
 
 /* memory management */
 void free_data(void);
@@ -97,4 +101,7 @@ void opening_fail(void);
 void instruction_fail(void);
 void malloc_fail(void);
 void push_fail(void);
+void pint_fail(void);
+void pop_fail(void);
+void swap_fail(void);
 #endif

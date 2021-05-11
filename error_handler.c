@@ -14,6 +14,9 @@ void error_handler(int num)
 		{3, instruction_fail},
 		{4, malloc_fail},
 		{5, push_fail},
+		{6, pint_fail},
+		{7, pop_fail},
+		{8, swap_fail},
 		{0, NULL}
 	};
 	int ite = 0;

@@ -92,6 +92,9 @@ void (*check_monty(void))(stack_t **stack, unsigned int line_number)
 	instruction_t instruction[] = {
 		{"push", monty_push},
 		{"pall", monty_pall},
+		{"pint", monty_pint},
+		{"pop", monty_pop},
+		{"swap", monty_swap},
 		{NULL, NULL}
 	};
 	int ite = 0;
