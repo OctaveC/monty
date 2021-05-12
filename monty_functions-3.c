@@ -43,7 +43,7 @@ void monty_pchar(stack_t **stack,
 
 	if (!head)
 		error_handler(16);
-	else if (head->n < 32 || head->n > 127)
+	else if (head->n < 65 || head->n > 122)
 		error_handler(15);
 	else
 		printf("%c\n", head->n);

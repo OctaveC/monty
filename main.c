@@ -67,7 +67,7 @@ int cut(void)
 {
 	char *saveptr, *token;
 	char *str = data.line;
-	int ite = 0, buffer_size = 500000;
+	int ite = 0, buffer_size = 15;
 
 	data.args = malloc(sizeof(char *) * buffer_size);
 	if (data.args == NULL)
