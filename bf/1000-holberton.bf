@@ -1,6 +1,7 @@
 [ This program prints "Holberton" and a newline to the screen.
 ]
-++++++++++               Set Cell #0 to 10
+
+++++++++++              Set Cell #0 to 10
 [
     >+++++++            Add 7 to Cell #1
     >+++++++++++	Add 11 to Cell #2
