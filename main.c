@@ -39,11 +39,13 @@ int monty_handler(void)
 
 	while ((check = getline(&data.line, &len, data.opening)) > 0)
 	{
-		if (data.line[0] == '\n')
-			continue;
 		data.line_num++;
 		free(data.args);
+		if (data.line[0] == '\n')
+			continue;
 		cut();
+		if (data.args == NULL)
+			continue;
 		data.cmd = data.args[0];
 		if (data.cmd != NULL && data.cmd[0] != '#')
 		{
