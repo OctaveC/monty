@@ -9,8 +9,7 @@
 	>+++++++++++	Add 11 to Cell #4
 	>+		Add 1 to Cell #5
 	<<<<<-		Decrement the loop counter in Cell #1; 5 iterations
-]			So all 5 elements within the braces got multiplied by
-			the value of Cell #0; which was 10.
+]			So all 5 elements within the braces got multiplied by the value of Cell #0; which was 10.
 
 >++.		H	Go to Cell #1; It is currently 70; add 2 and print
 >+.		o	Go to Cell #2; It is currently 110; add 1 and print
