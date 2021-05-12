@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	data.format = LIFO;
 	data.filename = argv[1];
 	monty_handler();
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 /**
@@ -39,8 +39,8 @@ int monty_handler(void)
 
 	while ((check = getline(&data.line, &len, data.opening)) > 0)
 	{
-		if (data.line == '\n')
-			continue;
+		/*	if (data.line == '\n') */
+			/*	continue; */
 		data.line_num++;
 		free(data.args);
 		cut();
