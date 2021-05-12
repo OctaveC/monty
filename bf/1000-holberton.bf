@@ -13,11 +13,11 @@
 
 >++.		H	Go to Cell #1; It is currently 70; add 2 and print
 >+.		o	Go to Cell #2; It is currently 110; add 1 and print
----.		l	Still in Cell #2; It is currently 111; subtract 3 and print
+---.		l	Still in Cell #2; It is currently 111; sub 3 and print
 >--.		b	Go to Cell #3; It is currently 100; subtract 2 and print
 +++.		e	Still in Cell #3; It is currently 98; add 3 and print
 >++++.		r	Go to Cell #4; It is currently 110; add 4 and print
 ++.		t	Still in Cell #4; It is currently 114; add 2 and print
 <<+++.		o	Go back to Cell #2; It is currently 108; add 3 and print
--.		n	Still in Cell #2; It is currently 111; subtract 1 and print
+-.		n	Still in Cell #2; It is currently 111; sub 1 and print
 >>>.		\n	Go to Cell #5; It is currently 10; print
