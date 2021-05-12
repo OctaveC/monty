@@ -48,7 +48,11 @@ void monty_pchar(stack_t **stack,
 	else if (head->n > 90 && head->n < 97)
 		error_handler(15);
 	else
-		printf("%c\n", head->n);
+	{
+		putchar(head->n);
+		putchar('\n');
+	}
+	/*	printf("%c\n", head->n); */
 }
 
 /**
