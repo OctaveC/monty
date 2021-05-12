@@ -41,7 +41,7 @@ void monty_pchar(stack_t **stack,
 {
 	stack_t *head = *stack;
 
-	if (!head)
+	if (*stack == NULL)
 		error_handler(16);
 	else if (head->n >= 0 && head->n <= 127)
 		printf("%c\n", head->n);
