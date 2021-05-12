@@ -44,8 +44,8 @@ int monty_handler(void)
 		/* if (data.line[0] == '\n') */
 		/*	continue; */
 		cut();
-		/* if (data.args == NULL) */
-			/*	continue; */
+		if (data.args == NULL)
+			continue;
 		data.cmd = data.args[0];
 		if (data.cmd != NULL && data.cmd[0] != '#')
 		{

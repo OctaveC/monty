@@ -67,14 +67,14 @@ void monty_pstr(stack_t **stack,
 		if (current->n >= 1 && current->n <= 127)
 		{
 			if (current->n >= 32 && current->n <= 127)
-				printf("%c", current->n);
+				putchar(current->n);
 
 			current = current->next;
 		}
 		else
 			break;
 	}
-	printf("\n");
+	putchar('\n');
 }
 
 /**
