@@ -14,6 +14,8 @@ int is_digit_str(char *str)
 		return (1);
 	for (ite = 0; str[ite]; ite++)
 	{
+		if (ite == 0 && str[0] == '-')
+			ite++;
 		if (isdigit(str[ite]) == 0)
 			return (1);
 	}
