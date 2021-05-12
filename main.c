@@ -44,8 +44,8 @@ int monty_handler(void)
 		/* if (data.line[0] == '\n') */
 		/*	continue; */
 		cut();
-		if (data.args == NULL)
-			continue;
+		/* if (data.args == NULL) */
+		/*	continue; */
 		data.cmd = data.args[0];
 		if (data.cmd != NULL && data.cmd[0] != '#')
 		{
@@ -67,7 +67,7 @@ int cut(void)
 {
 	char *saveptr, *token;
 	char *str = data.line;
-	int ite = 0, buffer_size = 15;
+	int ite = 0, buffer_size = 3;
 
 	data.args = malloc(sizeof(char *) * buffer_size);
 	if (data.args == NULL)
@@ -76,14 +76,14 @@ int cut(void)
 	for (ite = 0;; ite++, str = NULL)
 	{
 		token = strtok_r(str, "\t\a\n ", &saveptr);
-		if (token == NULL)
+		if (ite == 2)
 		{
 			break;
 		}
 		if (ite >= buffer_size)
 		{
-			data.args = _realloc(data.args, sizeof(char *) * buffer_size,
-					     sizeof(char *) * (buffer_size * 2));
+			/*	data.args = _realloc(data.args, sizeof(char *) * buffer_size, */
+			/*	sizeof(char *) * (buffer_size * 2)); */
 			if (data.args == NULL)
 				error_handler(3);
 			buffer_size *= 2;
